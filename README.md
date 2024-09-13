@@ -1,6 +1,6 @@
 # NeurobiologyMINDPsychosis
 
-This repository contains code and data created in support of the project *"Molecular and micro-architectural mapping of gray matter alterations in psychosis"*. All code was written in Matlab, R, and Python. Folders, files, and first steps are described below.
+This repository contains code and data created in support of the project *"TITLE"*. All code was written in Matlab, R, and Python. Folders, files, and first steps are described below.
 
 ## **Data**
 
