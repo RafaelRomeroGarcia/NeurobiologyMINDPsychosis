@@ -2,30 +2,32 @@
 
 This repository contains code and data created in support of the project *"TITLE"*. All code was written in Matlab, R, and Python. Folders, files, and first steps are described below.
 
-## **Data**
-
-The `Data` folder contains all the data required for running the analyses. Here are the files that need to be downloaded and stored in a specific location. The remaining files will be automatically generated:
-
--	The code used to compute MIND networks (`MIND_networks_PAFIP` folder) is available at https://github.com/isebenius/MIND and corresponds to [MIND_01_MIND.py](Code/MIND_01_MIND.py)
-  
--	The `all_microsc_DesikanKilliany68.csv` file is available at https://github.com/netneurolab/netneurotools
-
--	The code used for the PCA-CCA analyses (`cca_pls_toolkit_dev-grcca` folder) is available at https://github.com/RafaelRomeroGarcia/cca_pls_toolkit
-
 ## **First steps**
 
 1.	Download `Code` folder, which contains the scripts and functions used for the analyses.
 
 2.	Download `Data` folder, which contains data used to run the analyses, and will include data derived from them.
 
-3.	Create `volumes`, `centiles`, `degree`, `edges`, and `epicenters` folders in `Data`.
+3.	Create `volumes`, `centiles`, `degree`, `edges`, and `connectivity_to_epicenters` folders in `Data`.
+
+## **Data**
+
+The `Data` folder contains all the data required for running the analyses. Here are the files that need to be downloaded and stored in a specific location. The remaining files will be automatically generated:
+
+-	The code used to compute MIND networks (`MIND_networks_PAFIP` folder in `Data`) is available at https://github.com/isebenius/MIND and corresponds to [MIND_01_MIND.py](Code/MIND_01_MIND.py)
+  
+-	The `all_microsc_DesikanKilliany68.csv` file is available at https://github.com/netneurolab/netneurotools
+
+-	The `sensorimotor-association_axis_ranking_DK.csv` file is available at https://doi.org/10.1016/j.neuron.2021.06.016
+
+-	The code used for the PCA-CCA analyses (`cca_pls_toolkit_dev-grcca` folder) is available at https://github.com/RafaelRomeroGarcia/cca_pls_toolkit
 
 
 ## **Code**
 
 The `Code` folder contains all the code required for running the analyses and generate data and figures. All scripts are designed to be sequentially executed. Don't forget to change the location variable regularly. 
 
--	[MIND_01_MIND.py](Code/MIND_01_MIND.py) – computes MIND networks from FreeSurfer (by default stored in the surf/ folder). It returns a .csv file for each individual.
+-	[MIND_01_MIND.py](Code/MIND_01_MIND.py) – computes MIND networks from FreeSurfer directory (by default stored in the surf/ folder). It returns a .csv file for each individual and storages it in `MIND_networks_PAFIP` folder.
 
 -	[MIND_02_degrees_and_edges.m](Code/MIND_02_degrees_and_edges.m) – calculates for each HC and FEP individual the edges, degrees, and their effect sizes from MIND networks (`MIND_networks_PAFIP` folder). The results are stored in `degree` and `edges` folders. It returns a .csv file for each type (degree, effsizes_degree, edges, effsizes_edges) and for each clinical outcome (cognition, BPRS, SAPS, SANS) in the effect sizes cases.
 
@@ -35,9 +37,9 @@ The `Code` folder contains all the code required for running the analyses and ge
 
 -	[MIND_05_maturational_features.m](Code/MIND_05_maturational_features.m) – computes the associations between (1) MIND and centiles, (2) MIND and psychosis co-vulnerability, (3) hierarchical neurodevelopment and MIND and centiles, (4) peaks of volume/velocity and MIND and centiles.
 
--	[MIND_06_epicenters.m](Code/MIND_06_epicenters.m) – computes the epicenters of the disease. It returns a .csv file for each dignosis (HC/FEP) and clinical outcome.
+-	[MIND_06_connectivity_to_epicenters.m](Code/MIND_06_connectivity_to_epicenters.m) – computes the regions connected to epicenters of the disease. It returns a .csv file for each dignosis (HC/FEP) and clinical outcome.
 
--	[MIND_07_epicenter_mapping.R](Code/MIND_07_epicenter_mapping.R) – generates the regional brain maps of HC and FEP epicenters from the .csv files previously generated.
+-	[MIND_07_connectivity_to_epicenter_mapping.R](Code/MIND_07_connectivity_to_epicenter_mapping.R) – generates the regional brain maps of HC and FEP connectivity to epicenters from the .csv files previously generated.
 
 -	[MIND_08_parfor_FEP_degrees.m](Code/MIND_08_parfor_FEP_degrees.m) – runs PCA-CCA analyses. It returns the neurobiological loadings of the HC network and the effect sizes of degree for each clinical outcome. See [MIND_09_CCA_cent_var_FEP_degrees.m](Code/MIND_09_CCA_cent_var_FEP_degrees.m) and [MIND_10_run_CCA.m](Code/MIND_10_run_CCA.m) scripts before execution.
  
@@ -102,3 +104,19 @@ res.behav.weight.errorbar.side = 'one';
 
 ```
 
+### **Function calls**
+
+This section contains the functions that are essential for running the scripts but must not be executed.
+
+-	[computeCohen_d.m](Code/computeCohen_d.m) – computes the Cohen’s distance between two vectors. It is called by [MIND_02_degrees_and_edges.m](Code/MIND_02_degrees_and_edges.m) and [MIND_05_maturational_features.m](Code/MIND_05_maturational_features.m) scripts.
+
+-	[mix_dx.m](Code/mix_dx.m) – creates randomized groups by mixing patients with different diagnoses or group membership. It is called by [MIND_02_degrees_and_edges.m](Code/MIND_02_degrees_and_edges.m) and [MIND_05_maturational_features.m](Code/MIND_05_maturational_features.m).
+
+-	[regional_brainmap_representation.R](Code/regional_brainmap_representation) - generates regional brain maps from .csv files.
+
+-	[regional_brainmap_representation_borders.R](Code/regional_brainmap_representation_borders) - generates from .csv files regional brain maps highlighting the significant regions.
+
+
+## **License**
+
+This project is licensed under the terms of the [GNU General Public License v3.0 license](LICENSE).
