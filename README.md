@@ -1,4 +1,4 @@
-# NeurobiologyMINDPsychosis
+# Neurobiology and MIND in Psychosis
 
 This repository contains code and data created in support of the project *"TITLE"*. All code was written in Matlab, R, and Python. Folders, files, and first steps are described below.
 
@@ -8,19 +8,27 @@ This repository contains code and data created in support of the project *"TITLE
 
 2.	Download `Data` folder, which contains data used to run the analyses, and will include data derived from them.
 
-3.	Create `volumes`, `centiles`, `degree`, `edges`, and `connectivity_to_epicenters` folders in `Data`.
+3.	Create `degree` and `edges` folders in `Data`. Storage your volume and centile data in `volumes` and `centiles` subfolders. The remain folders will contain generated data.
 
 ## **Data**
 
 The `Data` folder contains all the data required for running the analyses. Here are the files that need to be downloaded and stored in a specific location. The remaining files will be automatically generated:
 
--	The code used to compute MIND networks (`MIND_networks_PAFIP` folder in `Data`) is available at https://github.com/isebenius/MIND and corresponds to [MIND_01_MIND.py](Code/MIND_01_MIND.py)
+- `volumes` folder contains the regional volume and velocity peaks in `Table_2_2.csv` obtained from https://doi.org/10.1038/s41586-022-04554-y. Please, storage your volume data in it.
+
+- `centiles` folder contains the regional FEP centiles in `significant_values_68.csv` obtained from https://doi.org/10.1038/s41380-024-02724-0. Please, storage your centile data in it.
   
--	The `all_microsc_DesikanKilliany68.csv` file is available at https://github.com/netneurolab/netneurotools
+-	The code used to compute MIND networks (`MIND_networks_PAFIP` folder in `Data`) is available at https://github.com/isebenius/MIND and corresponds to [MIND_01_MIND.py](Code/MIND_01_MIND.py).
 
--	The `sensorimotor-association_axis_ranking_DK.csv` file is available at https://doi.org/10.1016/j.neuron.2021.06.016
+- The `Desikan-Killiany68_Nat.txt` file contains the coordinates of the Desikan-Killiany Atlas 68 nodes.
 
--	The code used for the PCA-CCA analyses (`cca_pls_toolkit_dev-grcca` folder) is available at https://github.com/RafaelRomeroGarcia/cca_pls_toolkit
+- The `sensorimotor-association_axis_ranking_DK.csv` file is available at https://doi.org/10.1016/j.neuron.2021.06.016.
+
+-	The `all_microsc_DesikanKilliany68.csv` file is available at https://github.com/netneurolab/netneurotools.
+
+-	The `molecular_names.xlsx` file contains the neurobiological features and their corresponding neurobiological type.
+
+-	The code used for the PCA-CCA analyses (`cca_pls_toolkit_dev-grcca` folder) is available at https://github.com/RafaelRomeroGarcia/cca_pls_toolkit.
 
 
 ## **Code**
