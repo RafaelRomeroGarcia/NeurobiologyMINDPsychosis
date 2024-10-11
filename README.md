@@ -6,9 +6,9 @@ This repository contains code and data created in support of the project *"TITLE
 
 1.	Download `Code` folder, which contains the scripts and functions used for the analyses.
 
-2.	Download `Data` folder, which contains data used to run the analyses, and will include data derived from them.
+2.	Download `Data` folder, which contains data used to run the analyses and data derived from them.
 
-3.	Create `degree` and `edges` folders in `Data`. Storage your volume and centile data in `volumes` and `centiles` subfolders. The remain folders will contain generated data.
+3.	Storage your volume and centile data in `volumes` and `centiles` subfolders.
 
 ## **Data**
 
@@ -28,7 +28,7 @@ The `Data` folder contains all the data required for running the analyses. Here 
 
 -	The `molecular_names.xlsx` file contains the neurobiological features and their corresponding neurobiological type.
 
--	The code used for the PCA-CCA analyses (`cca_pls_toolkit_dev-grcca` folder) is available at https://github.com/RafaelRomeroGarcia/cca_pls_toolkit.
+-	The code used for the PCA-CCA analyses (`PCA-CCA` folder) is available at https://github.com/RafaelRomeroGarcia/cca_pls_toolkit.
 
 
 ## **Code**
