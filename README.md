@@ -22,7 +22,7 @@ The `Data` folder contains all the data required for running the analyses. Here 
 
 - The `Desikan-Killiany68_Nat.txt` file contains the coordinates of the Desikan-Killiany Atlas 68 nodes.
 
-- The `sensorimotor-association_axis_ranking_DK.csv` file is available at https://doi.org/10.1016/j.neuron.2021.06.016.
+- The `sensorimotor-association_axis_ranking_DK.csv` file was derived from available at https://doi.org/10.1016/j.neuron.2021.06.016.
 
 -	The `all_microsc_DesikanKilliany68.csv` file is available at https://github.com/netneurolab/netneurotools.
 
