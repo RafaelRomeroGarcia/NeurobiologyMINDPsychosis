@@ -1,0 +1,47 @@
+Name,Category,Label
+5-HT_{1A},Neurotransmitter,1
+5-HT_{1B},Neurotransmitter,1
+5-HT_{2A},Neurotransmitter,1
+5-HT_4,Neurotransmitter,1
+5-HT_6,Neurotransmitter,1
+5-HTT,Neurotransmitter,1
+α_{4}β_{2},Neurotransmitter,1
+CB_1,Neurotransmitter,1
+D_1,Neurotransmitter,1
+D_2,Neurotransmitter,1
+DAT,Neurotransmitter,1
+GABA,Neurotransmitter,1
+H_3,Neurotransmitter,1
+M_1,Neurotransmitter,1
+mGluR_5,Neurotransmitter,1
+MOR,Neurotransmitter,1
+NET,Neurotransmitter,1
+NMDA,Neurotransmitter,1
+VAChT,Neurotransmitter,1
+Astro,Cell type,2
+Endo,Cell type,2
+Micro,Cell type,2
+Neuro-Ex,Cell type,2
+Neuro-In,Cell type,2
+Oligo,Cell type,2
+OPC,Cell type,2
+Layer I,Layer Thickness,3
+Layer II,Layer Thickness,3
+Layer III,Layer Thickness,3
+Layer IV,Layer Thickness,3
+Layer V,Layer Thickness,3
+Layer VI,Layer Thickness,3
+Gene PC1,Microstructure,4
+Myelin,Microstructure,4
+Thickness,Microstructure,4
+Developmental exp.,Expansion,5
+Evolutionary exp.,Expansion,5
+CBF,Metabolism,6
+CBV,Metabolism,6
+CMRO_2,Metabolism,6
+CMRGlu,Metabolism,6
+Scaling NIH,Expansion,5
+Scaling PNC,Expansion,5
+Neurotransmitter PC1,Microstructure,4
+Synapse density,Microstructure,4
+Glycolytic index,Metabolism,6
