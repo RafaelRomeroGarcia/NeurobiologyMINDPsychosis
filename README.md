@@ -20,9 +20,9 @@ The `Data` folder contains all the data required for running the analyses. Here 
   
 -	The code used to compute MIND networks (`MIND_networks_PAFIP` folder in `Data`) is available at https://github.com/isebenius/MIND and corresponds to [MIND_01_MIND.py](Code/MIND_01_MIND.py).
 
-- The `Desikan-Killiany68_Nat.txt` file contains the coordinates of the Desikan-Killiany Atlas 68 nodes.
+- The `Desikan-Killiany68_Nat.txt` file contains the coordinates of the Desikan-Killiany Atlas 68 nodes for representing the spatial 3D brains in [MIND_04_brain_mapping_3D.m](Code/MIND_04_brain_mapping_3D.m).
 
-- The `sensorimotor-association_axis_ranking_DK.csv` file was derived from available at https://doi.org/10.1016/j.neuron.2021.06.016.
+- The `sensorimotor-association_axis_ranking_DK.csv` file was derived from https://doi.org/10.1016/j.neuron.2021.06.016.
 
 -	The `all_microsc_DesikanKilliany68.csv` file is available at https://github.com/netneurolab/netneurotools.
 
@@ -112,7 +112,7 @@ res.behav.weight.errorbar.side = 'one';
 
 ```
 
--	[MIND_11_neurobiology.m](Code/MIND_11_neurobiology.m) – computes the associations between MIND and neurobiological features
+-	[MIND_11_neurobiology.m](Code/MIND_11_neurobiology.m) – computes the associations between MIND and neurobiological features.
   
 ### **Function calls**
 
