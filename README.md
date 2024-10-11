@@ -37,7 +37,7 @@ The `Code` folder contains all the code required for running the analyses and ge
 
 -	[MIND_01_MIND.py](Code/MIND_01_MIND.py) – computes MIND networks from FreeSurfer directory (by default stored in the surf/ folder). It returns a .csv file for each individual and storages it in `MIND_networks_PAFIP` folder.
 
--	[MIND_02_degrees_and_edges.m](Code/MIND_02_degrees_and_edges.m) – calculates for each HC and FEP individual the edges, degrees, and their effect sizes from MIND networks (`MIND_networks_PAFIP` folder). The results are stored in `degree` and `edges` folders. It returns a .csv file for each type (degree, effsizes_degree, edges, effsizes_edges) and for each clinical outcome (cognition, BPRS, SAPS, SANS) in the effect sizes cases.
+-	[MIND_02_degree_and_edges.m](Code/MIND_02_degree_and_edges.m) – calculates for each HC and FEP individual the edges, degrees, and their effect sizes from MIND networks (`MIND_networks_PAFIP` folder). The results are stored in `degree` and `edges` folders. It returns a .csv file for each type (degree, effsizes_degree, edges, effsizes_edges) and for each clinical outcome (cognition, BPRS, SAPS, SANS) in the effect sizes cases.
 
 -	[MIND_03_brain_mapping.R](Code/MIND_03_brain_mapping.R) – generates the regional brain maps of: (1) MIND degree of HC and FEP, and (2) effect sizes of MIND degree from the .csv files previously generated.
 
@@ -120,11 +120,11 @@ This section contains the functions that are essential for running the scripts b
 
 -	[computeCohen_d.m](Code/computeCohen_d.m) – computes the Cohen’s distance between two vectors. It is called by [MIND_02_degrees_and_edges.m](Code/MIND_02_degrees_and_edges.m) and [MIND_05_maturational_features.m](Code/MIND_05_maturational_features.m) scripts.
 
--	[mix_dx.m](Code/mix_dx.m) – creates randomized groups by mixing patients with different diagnoses or group membership. It is called by [MIND_02_degrees_and_edges.m](Code/MIND_02_degrees_and_edges.m) and [MIND_05_maturational_features.m](Code/MIND_05_maturational_features.m).
+-	[mix_dx.m](Code/mix_dx.m) – creates randomized groups by mixing patients with different diagnoses or group membership. It is called by [MIND_02_degree_and_edges.m](Code/MIND_02_degree_and_edges.m) and [MIND_05_maturational_features.m](Code/MIND_05_maturational_features.m).
 
--	[regional_brainmap_representation.R](Code/regional_brainmap_representation) - generates regional brain maps from .csv files.
+-	[regional_brainmap_representation.R](Code/regional_brainmap_representation.R) - generates regional brain maps from .csv files.
 
--	[regional_brainmap_representation_borders.R](Code/regional_brainmap_representation_borders) - generates from .csv files regional brain maps highlighting the significant regions.
+-	[regional_brainmap_representation_borders.R](Code/regional_brainmap_representation_borders.R) - generates from .csv files regional brain maps highlighting the significant regions.
 
 
 ## **License**
