@@ -1,6 +1,6 @@
 # Neurobiology and MIND in Psychosis
 
-This repository contains code and data created in support of the project *"TITLE"*. All code was written in Matlab, R, and Python. Folders, files, and first steps are described below.
+This repository contains code and data created in support of the project *"Reduced structural similarity in first-episode psychosis links to maturation and clinical outcomes"*. All code was written in Matlab, R, and Python. Folders, files, and first steps are described below.
 
 ## **First steps**
 
