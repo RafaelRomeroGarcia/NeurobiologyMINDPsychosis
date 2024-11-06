@@ -35,6 +35,67 @@ X_rot_ordered = X_rotated(:,:);
 load("edge_CN_68.mat")
 load("effsizes_edges_68.mat")
 
+mean_edge_CN = zeros(height(molecular_map_ordered));
+for i = 1:length(edge_CN_68)
+    mean_edge_CN = mean_edge_CN + edge_CN_68{i,2}{:,:};
+end
+mean_edge_CN = mean_edge_CN/length(edge_CN_68);
+
+for i = 1:size(mean_edge_CN)
+    mean_edge_CN(i, i) = NaN;
+end
+
+mean_edge_CN_col = mean_edge_CN(find(triu(ones(size(mean_edge_CN)),1)));
+effsizes_edges_col = effsizes_edges_68(find(triu(ones(size(effsizes_edges_68)),1)));
+Y = corr(molecular_map_ordered{:,:}');
+Y = Y(find(triu(ones(size(Y)),1)));
+correlation_CN_neuro = corr(mean_edge_CN_col, Y);
+correlation_effsizes_neuro = corr(effsizes_edges_col,Y);
+
+nperm = 10000;
+for i = 1:nperm
+    mean_edge_CN_perm = mean_edge_CN(X_rot_ordered(:,i),X_rot_ordered(:,i));
+    mean_edge_CN_perm_col = mean_edge_CN_perm(find(triu(ones(size(mean_edge_CN_perm)),1)));
+    r_perm_neuro(i) = corr(mean_edge_CN_perm_col,Y);
+
+    effsizes_edges_perm = effsizes_edges_68(X_rot_ordered(:,i),X_rot_ordered(:,i));
+    effsizes_edges_CN_perm_col = effsizes_edges_perm(find(triu(ones(size(effsizes_edges_perm)),1)));
+    r_perm_effsizes_neuro(i) = corr(effsizes_edges_CN_perm_col,Y);
+
+end
+pval_neuro = sum(abs(r_perm_neuro) > abs(correlation_CN_neuro)) / nperm;
+pval_effsizes_edges_neuro = sum(abs(r_perm_effsizes_neuro) > abs(correlation_effsizes_neuro)) / nperm;
+
+
+[counts, centers] = hist3([mean_edge_CN_col Y], 'Nbins', [20 20]);
+density = interp2(centers{1}, centers{2}, counts', mean_edge_CN_col,Y);
+
+figure;
+scatter(mean_edge_CN_col,Y,21,density,'filled')
+ylabel('Neurobiological feature correlation')
+xlabel('Edges CN')
+set(gca, 'FontSize', 14,'CLim',[0 max(density)])
+set(lsline, 'Color', [0 0.4470 0.7410], 'LineWidth', 1,'HandleVisibility', 'off');
+textString = ['r = ', sprintf('%.2f',correlation_CN_neuro), '; ', '\color{red}', ' P_{spin} < 10e-4 '];
+annotation('textbox', [0.57 0.21 0.1 0.1], 'String', textString, 'FontSize', 12);
+colorbar
+
+[counts, centers] = hist3([effsizes_edges_col Y], 'Nbins', [20 20]);
+density = interp2(centers{1}, centers{2}, counts', effsizes_edges_col,Y);
+
+figure;
+scatter(effsizes_edges_col,Y,15,density,'filled')
+xlabel('Effsizes edges')
+ylabel('Neurobiological feature correlation')
+lsline
+set(gca,'FontSize',14,'CLim',[0 51.6])
+set(lsline, 'Color', [0 0.4470 0.7410], 'LineWidth', 1,'HandleVisibility', 'off');
+textString = ['r = ', sprintf('%.2f',correlation_effsizes_neuro), '; ', ' p = ', sprintf('%.2f',pval_effsizes_edges_neuro)];
+annotation('textbox','String', textString, 'FontSize', 10,'Position',[0.17 0.11 0.27 0.08]);
+colorbar
+
+
+% MIND associataion by neurobiological type
 % Change as desired
 MIND = 'HC';
 MIND = 'effect size';
@@ -121,4 +182,5 @@ for k = 1:length(types)
     set(gca, 'FontSize', 14)
     set(lsline, 'Color', [0 0.4470 0.7410], 'LineWidth', 1,'HandleVisibility', 'off');
     colorbar
+
 end
