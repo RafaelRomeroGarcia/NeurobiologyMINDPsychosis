@@ -1,6 +1,6 @@
 # Neurobiology and MIND in schizophrenia spectrum disorders (SSD)
 
-This repository contains code and data created in support of the project *"Reduced brain structural similarity links to maturation and clinical outcomes in schizophrenia"*. All code was written in Matlab, R, and Python. Folders, files, and first steps are described below.
+This repository contains code and data created in support of the project García-San-Martín, N.; Bethlehem, R. AI; Segura, P. et al. *"Reduced brain structural similarity links to maturation and clinical outcomes in schizophrenia"* Nat Commun (2025). All code was written in Matlab, R, and Python. Folders, files, and first steps are described below.
 
 ## **First steps**
 
